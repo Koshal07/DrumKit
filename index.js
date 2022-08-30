@@ -6,8 +6,7 @@ for(var i=0;i<numberOfDrumButtons;i++)
     document.querySelectorAll(".drum")[i].addEventListener("click",function(){
       var buttonInnerHTML=this.innerHTML;
       makeSound(buttonInnerHTML);
-      changeAnimation(buttonInnerHTML);
-
+      
     }); // when addEventListener detects a click then it will this ananonimus functon which pop's out an alert msg
 }
 
@@ -15,7 +14,7 @@ for(var i=0;i<numberOfDrumButtons;i++)
 
 document.addEventListener("keypress",function(event){
     makeSound(event.key); // it will which key was pressed
-    changeAnimation(event.key);
+    
 });
 //
 //
@@ -62,9 +61,4 @@ function makeSound(key){
     }
 }
 
-//active button 
-function changeAnimation(keyPressed){
-    var activeButton = document.querySelector("."+keyPressed).classList.add("pressed");
-    setTimeout(function(){
-        activeButton.classList.remove("pressed");
-    },100);
+
